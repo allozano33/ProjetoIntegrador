@@ -17,7 +17,7 @@ public class ProductControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void shouldInsert ( ) throws Exception {
+    public void shouldInsert() throws Exception {
 
         String payLoad = "{\n" +
                 "    \"productId\": \"MLB-122\",\n" +
@@ -34,7 +34,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void shouldInsertOrders ( ) throws Exception {
+    public void shouldInsertOrders() throws Exception {
 
         String payLoad = "{\n" +
                 "    \"date\":\"2021-10-31\",\n" +
@@ -44,7 +44,7 @@ public class ProductControllerTest {
                 "    },\n" +
                 "    \"products\":[\n" +
                 "        {\n" +
-                "            \"productId\": \"MLB-126\",\n" +
+                "            \"productId\": \"MLB-122\",\n" +
                 "            \"quantity\": 6            \n" +
                 "        }\n" +
                 "    ]\n" +
@@ -58,7 +58,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void shouldGetProductSeller ( ) throws Exception {
+    public void shoulGetProductSeller() throws Exception {
 
         mockMvc.perform(
                         MockMvcRequestBuilders.get("http://localhost:8090/api/v1/product/list"))
@@ -67,7 +67,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void shouldListOrdersByOrderId ( ) throws Exception {
+    public void shoulListOrdersByOrderId() throws Exception {
 
         mockMvc.perform(
                         MockMvcRequestBuilders.get("http://localhost:8090/api/v1/product/orders/1"))
@@ -76,13 +76,13 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void shouldupdate ( ) throws Exception {
+    public void shouldUpdate() throws Exception {
 
         String payLoad = "{\n" +
                 "    \"products\":[\n" +
                 "        {\n" +
                 "            \"purchaseItemId\": 1,\n" +
-                "            \"productId\": \"MLB-126\",\n" +
+                "            \"productId\": \"MLB-120\",\n" +
                 "            \"quantity\": 1           \n" +
                 "        }\n" +
                 "    ]\n" +
@@ -96,27 +96,4 @@ public class ProductControllerTest {
     }
 
 
-    @Test
-    public void shouldHistoryBuyer ( ) throws Exception {
-
-        mockMvc.perform(
-                        MockMvcRequestBuilders.get("http://localhost:8090/api/v1/product/history/buyer/1"))
-                .andExpect(MockMvcResultMatchers.status().isOk());
-    }
-
-    @Test
-    public void shouldHistoryInsert ( ) throws Exception {
-
-        mockMvc.perform(
-                        MockMvcRequestBuilders.get("http://localhost:8090/api/v1/product/hystory/insert"))
-                .andExpect(MockMvcResultMatchers.status().isOk());
-    }
-
-    @Test
-    public void shouldHistory ( ) throws Exception {
-
-        mockMvc.perform(
-                        MockMvcRequestBuilders.get("http://localhost:8090/api/v1/product/delete/1"))
-                .andExpect(MockMvcResultMatchers.status().isOk());
-    }
 }
