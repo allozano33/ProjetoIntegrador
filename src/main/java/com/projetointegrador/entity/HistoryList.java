@@ -18,7 +18,7 @@ public class HistoryList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long purchaseOrderId;
+    private Long historyListId;
     private LocalDate date;
 
     @ManyToOne
@@ -29,8 +29,8 @@ public class HistoryList {
     @JoinColumn(name = "orderStatusId")
     private OrderStatus orderStatus;
 
-    @OneToMany(mappedBy = "purchaseOrder", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<PurchaseItem> purchaseItems;
+    @OneToMany(mappedBy = "historyList", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<HistoryItem> historyItems;
 }
 
 

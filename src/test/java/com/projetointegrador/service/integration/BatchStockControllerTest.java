@@ -46,7 +46,7 @@ public class BatchStockControllerTest {
     public void shouldlistBatchStockByProductId() throws Exception {
 
         mockMvc.perform(
-                        MockMvcRequestBuilders.get("http://localhost:8090/api/v1/fresh-products/batchStock/listById/MLB-129")
+                        MockMvcRequestBuilders.get("http://localhost:8090/api/v1/fresh-products/batchStock/listById/MLB-497")
                                 .header("Authorization", "Bearer " + auth().getToken()))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
@@ -64,7 +64,7 @@ public class BatchStockControllerTest {
     public void shouldBatchStockInSection() throws Exception {
 
         mockMvc.perform(
-                        MockMvcRequestBuilders.get("http://localhost:8090/api/v1/fresh-products/batchStock/due-date/SEC-126/15")
+                        MockMvcRequestBuilders.get("http://localhost:8090/api/v1/fresh-products/batchStock/due-date/SEC-128/15")
                                 .header("Authorization", "Bearer " + auth().getToken()))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }

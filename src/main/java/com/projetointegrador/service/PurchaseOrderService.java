@@ -3,6 +3,7 @@ package com.projetointegrador.service;
 import com.projetointegrador.dto.*;
 import com.projetointegrador.entity.*;
 import com.projetointegrador.repository.BatchStockPersistence;
+import com.projetointegrador.repository.BuyerPersistence;
 import com.projetointegrador.repository.ProductPersistence;
 import com.projetointegrador.repository.PurchaseOrderPersistence;
 import org.springframework.beans.factory.annotation.Autowired;

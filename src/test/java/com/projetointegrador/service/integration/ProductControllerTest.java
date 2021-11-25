@@ -21,7 +21,7 @@ public class ProductControllerTest {
     private MockMvc mockMvc;
 
     @BeforeTestClass
-    public TokenDto auth() throws Exception {
+    public TokenDto auth ( ) throws Exception {
 
         ObjectMapper mapper = new ObjectMapper();
 
@@ -43,7 +43,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void shouldInsert() throws Exception {
+    public void shouldInsert ( ) throws Exception {
 
         String payLoad = "{\n" +
                 "    \"productId\": \"MLB-129\",\n" +
@@ -61,7 +61,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void shouldInsertOrders() throws Exception {
+    public void shouldInsertOrders ( ) throws Exception {
 
         String payLoad = "{\n" +
                 "    \"date\":\"2021-10-31\",\n" +
@@ -86,7 +86,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void shoulGetProductSeller() throws Exception {
+    public void shoulGetProductSeller ( ) throws Exception {
 
         mockMvc.perform(
                         MockMvcRequestBuilders.get("http://localhost:8090/api/v1/product/list")
@@ -96,7 +96,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void shoulListOrdersByOrderId() throws Exception {
+    public void shoulListOrdersByOrderId ( ) throws Exception {
 
         mockMvc.perform(
                         MockMvcRequestBuilders.get("http://localhost:8090/api/v1/product/orders/1")
@@ -106,7 +106,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void shouldUpdate() throws Exception {
+    public void shouldUpdate ( ) throws Exception {
 
         String payLoad = "{\n" +
                 "    \"products\":[\n" +
@@ -126,5 +126,48 @@ public class ProductControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
+    @Test
+    public void shouldGetHistoryListBuyerId ( ) throws Exception {
 
+        mockMvc.perform(
+                        MockMvcRequestBuilders.get("http://localhost:8090/api/v1/product/history/buyer/9")
+                                .header("Authorization", "Bearer " + auth().getToken()))
+                .andExpect(MockMvcResultMatchers.status().isOk());
+    }
+
+    @Test
+    public void shouldPostHistoryInsert ( ) throws Exception {
+
+        String payLoad = "{\n" +
+                "    \"date\": \"2021-10-31\",\n" +
+                "    \"buyerId\": 4,\n" +
+                "    \"orderStatus\": {\n" +
+                "        \"orderStatusId\": 1,\n" +
+                "        \"statusCode\": \"cart\"\n" +
+                "    },\n" +
+                "    \"products\": [\n" +
+                "        {\n" +
+                "            \"productId\": \"MLB-499\",\n" +
+                "            \"quantity\": 1\n" +
+                "        }\n" +
+                "    ]\n" +
+                "}";
+
+        mockMvc.perform(
+                        MockMvcRequestBuilders.post("http://localhost:8090/api/v1/product/hystory/insert")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .header("Authorization", "Bearer " + auth().getToken())
+                                .content(payLoad))
+                .andExpect(MockMvcResultMatchers.status().isCreated());
+
+    }
+
+    @Test
+    public void shouldDeleteHistoryList ( ) throws Exception {
+
+        mockMvc.perform(
+                        MockMvcRequestBuilders.delete("http://localhost:8090/api/v1/product/delete/9")
+                                .header("Authorization", "Bearer " + auth().getToken()))
+                .andExpect(MockMvcResultMatchers.status().isOk());
+    }
 }

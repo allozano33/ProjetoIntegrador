@@ -47,7 +47,7 @@ public class RepresentativeControllerTest {
 
         String payLoad = "{\n" +
                 "    \"name\": \"Rafael\",\n" +
-                "    \"cpf\": \"150.292.382-70\",\n" +
+                "    \"cpf\": \"150.292.392-70\",\n" +
                 "    \"address\": \n" +
                 "        {\n" +
                 "            \"street\": \"Rua das Bananeiras\",\n" +
@@ -68,6 +68,3 @@ public class RepresentativeControllerTest {
     }
 
 }
-
-
-

@@ -49,7 +49,7 @@ public class BuyerControllerTest {
 
         String payLoad = "{\n" +
                 "    \"name\": \"Alessandro\",\n" +
-                "    \"cpf\": \"150.555.833-167\",\n" +
+                "    \"cpf\": \"150.555.793-167\",\n" +
                 "    \"address\": \n" +
                 "        {\n" +
                 "            \"street\": \"Rua das Bananeiras\",\n" +
@@ -61,12 +61,12 @@ public class BuyerControllerTest {
                 "        }\n" +
                 "}";
 
-         mockMvc.perform(
-                 MockMvcRequestBuilders.post("http://localhost:8090/api/v1/buyer/insert")
-                         .contentType(MediaType.APPLICATION_JSON)
-                         .header("Authorization", "Bearer " + auth().getToken())
-                         .content(payLoad))
-                         .andExpect(MockMvcResultMatchers.status().isCreated());
+        mockMvc.perform(
+                        MockMvcRequestBuilders.post("http://localhost:8090/api/v1/buyer/insert")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .header("Authorization", "Bearer " + auth().getToken())
+                                .content(payLoad))
+                .andExpect(MockMvcResultMatchers.status().isCreated());
     }
 }
 

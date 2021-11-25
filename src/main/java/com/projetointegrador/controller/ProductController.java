@@ -15,6 +15,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/api/v1/product")
@@ -117,36 +118,27 @@ public class ProductController {
         return ResponseEntity.ok().body(totalPrice);
     }
 
-    @PutMapping(value = "/history/update")
-    public ResponseEntity<TotalPrice> update (@RequestBody @Valid HistoryByBuyerListDto historyByBuyerListDto) {
-        batchStockService.verifyProductInBatchStock(HistoryByBuyerListDto.convert(historyByBuyerListDto.getProducts()));
-        TotalPrice totalPrice = purchaseOrderService.getTotalprice(HistoryByBuyerListDto.convert(historyByBuyerListDto.getProducts()));
-        //purchaseItemService.update(historyByBuyerListDto.getProducts());
-
-        return ResponseEntity.ok().body(totalPrice);
-    }
-
     /**
      * @param id retorna o id da cliente
      * @return a lista da ultima compra
      */
     @GetMapping(value = "/history/buyer/{id}")
-    public ResponseEntity<PurchaseOrderResponseDto> listOrdersByBuyerId (@PathVariable("id") Long id) {
-        PurchaseOrderResponseDto purchaseOrderResponseDto = purchaseOrderService.listOrdersByOrderId(id);
+    public ResponseEntity<Optional<List<HistoryList>>> listOrdersByBuyerId (@PathVariable("id") Long id) {
+        Optional<List<HistoryList>> historyList = historyListService.listHistoryByBuyer(id);
 
-        if (purchaseOrderResponseDto.getBuyerId() == null) {
+        if (historyList == null) {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.ok().body(purchaseOrderResponseDto);
+        return ResponseEntity.ok().body(historyList);
     }
 
     @PostMapping(value = "hystory/insert")
-    public ResponseEntity<HistoryList> insert (@RequestBody @Valid HistoryList historyList, UriComponentsBuilder uriBuilder) throws IOException {
-        HistoryList historyListCadastrado = historyListService.insert(historyList);
+    public ResponseEntity<HistoryResponseDto> insert (@RequestBody @Valid HistoryListDto historyListDto, UriComponentsBuilder uriBuilder) throws IOException {
+        HistoryList historyListCadastrado = historyListService.insert(HistoryListDto.convert(historyListDto,buyerService,productService));
 
-        URI uri = uriBuilder.path("/representative/search/{id}").buildAndExpand(historyListCadastrado.getPurchaseOrderId()).toUri();
-        return ResponseEntity.created(uri).body(historyListCadastrado);
+        URI uri = uriBuilder.path("/representative/search/{id}").buildAndExpand(historyListCadastrado.getHistoryListId()).toUri();
+        return ResponseEntity.created(uri).body(HistoryByBuyerListDto.convert(historyListCadastrado,buyerService,productService,orderStatusService));
     }
 
     @DeleteMapping(value = "/delete/{purchaseOrderId}")

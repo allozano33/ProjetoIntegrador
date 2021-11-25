@@ -60,7 +60,7 @@ public class WarehouseControllerTest {
     public void shouldGetWarehouseByProductId() throws Exception {
 
         mockMvc.perform(
-                        MockMvcRequestBuilders.get("http://localhost:8090/api/v1/warehouse/listWarehouseByProductId/MLB-122")
+                        MockMvcRequestBuilders.get("http://localhost:8090/api/v1/warehouse/listWarehouseByProductId/MLB-132")
                                 .header("Authorization", "Bearer " + auth().getToken()))
 
                 .andExpect(MockMvcResultMatchers.status().isOk());

@@ -46,7 +46,7 @@ public class SellerControllerTest {
 
         String payLoad = "{\n" +
                 "    \"name\": \"Ana\",\n" +
-                "    \"cpf\": \"150.555.303-970\",\n" +
+                "    \"cpf\": \"150.559.303-970\",\n" +
                 "    \"address\": \n" +
                 "        {\n" +
                 "            \"street\": \"Rua das Bananeiras\",\n" +
