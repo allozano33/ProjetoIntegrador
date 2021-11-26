@@ -184,3 +184,59 @@ Link para uso:
 
 http://localhost:8080/api/v1/product/history/buyer/1
 
+GET 1.2 - History Buyer Update
+Para cadastrar o pedido de entrada no sistema é necessário efetuar uma requisição via postman
+
+{
+    "date": "2021-10-31",
+    "buyerId": 1,
+    "orderStatus": {
+        "orderStatusId": 1,
+        "statusCode": "cart"
+    },
+    "historyItemDto": [
+        {
+            "productId": "MLB-499",
+            "quantity": 1
+        }
+    ]
+}
+
+
+
+Link para uso:
+
+http://localhost:8080/api/v1/product/hystory/insert
+
+
+GET 1.3 History Buyer Delete
+Para cadastrar o pedido de entrada no sistema é necessário efetuar uma requisição via postman
+
+
+{
+    "date": "2021-10-31",
+    "buyerId": 1,
+    "orderStatus": {
+        "orderStatusId": 1,
+        "statusCode": "cart"
+    },
+    "historyItemDto": [
+        {
+            "productId": "MLB-499",
+            "quantity": 1
+        }
+    ]
+}
+
+
+Link para uso:
+
+
+http://localhost:8090/api/v1/product/delete/7
+
+
+
+
+
+
+
