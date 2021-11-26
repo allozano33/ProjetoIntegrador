@@ -3,83 +3,217 @@
 ## Grupo 5 Wave - 3
 
 
-### Requisito 1
+### Requisito 6
 
 
-### POST 1.1 - InboundOrder - Insert
+### POST 1.1 - History buyer - List
 
-Para cadastrar o pedido de entrada no sistema é necessário efetuar uma requisição via postman
+Para consultar o pedido anterior no sistema é necessário efetuar uma requisição via postman
 
 ```
-{
-    "orderNumber": 45,
-    "orderDate":"1998-07-23",
-    "sectionCode": "SEC-126",
-    "batchStockDto":[
-        {
-            "productSellerId": 1,
-            "currentTemperature": 25,
-            "minimumTemperature": 9.5,
-            "initialQuantity": 100,
-            "currentQuantity": 100,
-            "manufacturingDate": "1998-07-23",
-            "manufacturingTime": "2021-09-15T12:23:37.206794",
-            "dueDate": "2021-11-23",
-            "batchStockNumber": 77
+[
+    {
+        "historyListId": 7,
+        "date": "2021-10-31",
+        "buyer": {
+            "buyerId": 1,
+            "cpf": "150.895.993-099",
+            "name": "Alessandro",
+            "address": {
+                "street": "Rua das Bananeiras",
+                "number": "80",
+                "postalCode": "123455000",
+                "city": "Mogi das Cruzes",
+                "state": "São Paulo",
+                "complement": "Casa"
+            }
         },
-        {
-            "productSellerId": 1,
-            "currentTemperature": 25,
-            "minimumTemperature": 9.5,
-            "initialQuantity": 100,
-            "currentQuantity": 100,
-            "manufacturingDate": "1998-07-23",
-            "manufacturingTime": "2021-09-15T12:23:37.206794",
-            "dueDate": "2021-11-29",
-            "batchStockNumber": 99
-        }
-    ]
-}
+        "orderStatus": {
+            "orderStatusId": 1,
+            "statusCode": "cart"
+        },
+        "historyItems": []
+    },
+    {
+        "historyListId": 8,
+        "date": "2021-10-31",
+        "buyer": {
+            "buyerId": 1,
+            "cpf": "150.895.993-099",
+            "name": "Alessandro",
+            "address": {
+                "street": "Rua das Bananeiras",
+                "number": "80",
+                "postalCode": "123455000",
+                "city": "Mogi das Cruzes",
+                "state": "São Paulo",
+                "complement": "Casa"
+            }
+        },
+        "orderStatus": {
+            "orderStatusId": 1,
+            "statusCode": "cart"
+        },
+        "historyItems": []
+    },
+    {
+        "historyListId": 9,
+        "date": "2021-10-31",
+        "buyer": {
+            "buyerId": 1,
+            "cpf": "150.895.993-099",
+            "name": "Alessandro",
+            "address": {
+                "street": "Rua das Bananeiras",
+                "number": "80",
+                "postalCode": "123455000",
+                "city": "Mogi das Cruzes",
+                "state": "São Paulo",
+                "complement": "Casa"
+            }
+        },
+        "orderStatus": {
+            "orderStatusId": 1,
+            "statusCode": "cart"
+        },
+        "historyItems": []
+    },
+    {
+        "historyListId": 10,
+        "date": "2021-10-31",
+        "buyer": {
+            "buyerId": 1,
+            "cpf": "150.895.993-099",
+            "name": "Alessandro",
+            "address": {
+                "street": "Rua das Bananeiras",
+                "number": "80",
+                "postalCode": "123455000",
+                "city": "Mogi das Cruzes",
+                "state": "São Paulo",
+                "complement": "Casa"
+            }
+        },
+        "orderStatus": {
+            "orderStatusId": 1,
+            "statusCode": "cart"
+        },
+        "historyItems": []
+    },
+    {
+        "historyListId": 11,
+        "date": "2021-10-31",
+        "buyer": {
+            "buyerId": 1,
+            "cpf": "150.895.993-099",
+            "name": "Alessandro",
+            "address": {
+                "street": "Rua das Bananeiras",
+                "number": "80",
+                "postalCode": "123455000",
+                "city": "Mogi das Cruzes",
+                "state": "São Paulo",
+                "complement": "Casa"
+            }
+        },
+        "orderStatus": {
+            "orderStatusId": 1,
+            "statusCode": "cart"
+        },
+        "historyItems": []
+    },
+    {
+        "historyListId": 12,
+        "date": "2021-10-31",
+        "buyer": {
+            "buyerId": 1,
+            "cpf": "150.895.993-099",
+            "name": "Alessandro",
+            "address": {
+                "street": "Rua das Bananeiras",
+                "number": "80",
+                "postalCode": "123455000",
+                "city": "Mogi das Cruzes",
+                "state": "São Paulo",
+                "complement": "Casa"
+            }
+        },
+        "orderStatus": {
+            "orderStatusId": 1,
+            "statusCode": "cart"
+        },
+        "historyItems": []
+    },
+    {
+        "historyListId": 13,
+        "date": "2021-10-31",
+        "buyer": {
+            "buyerId": 1,
+            "cpf": "150.895.993-099",
+            "name": "Alessandro",
+            "address": {
+                "street": "Rua das Bananeiras",
+                "number": "80",
+                "postalCode": "123455000",
+                "city": "Mogi das Cruzes",
+                "state": "São Paulo",
+                "complement": "Casa"
+            }
+        },
+        "orderStatus": {
+            "orderStatusId": 1,
+            "statusCode": "cart"
+        },
+        "historyItems": []
+    },
+    {
+        "historyListId": 14,
+        "date": "2021-10-31",
+        "buyer": {
+            "buyerId": 1,
+            "cpf": "150.895.993-099",
+            "name": "Alessandro",
+            "address": {
+                "street": "Rua das Bananeiras",
+                "number": "80",
+                "postalCode": "123455000",
+                "city": "Mogi das Cruzes",
+                "state": "São Paulo",
+                "complement": "Casa"
+            }
+        },
+        "orderStatus": {
+            "orderStatusId": 1,
+            "statusCode": "cart"
+        },
+        "historyItems": []
+    }
+]
 ```
 
 ***Link para uso:***
 
-http://localhost:8090/api/v1/fresh-products/inboundorder/insert
+http://localhost:8080/api/v1/product/history/buyer/1
 
 
 
-### PUT 1.2 - InboundOrder - Update
+### PUT 1.2 - History buyer- Update
 
 
 Para atualizar o pedido de entrada no sistema é necessário efetuar uma requisição via postman
 
 ```
 {
-    "orderNumber": 40,
-    "orderDate":"2021-07-23",
-    "sectionCode": "SEC-125",
-    "batchStockDto":[
+    "date": "2021-10-31",
+    "buyerId": 1,
+    "orderStatus": {
+        "orderStatusId": 1,
+        "statusCode": "cart"
+    },
+    "historyItemDto": [
         {
-            "productSellerId": 1,
-            "currentTemperature": 15,
-            "minimumTemperature": 8,
-            "initialQuantity": 40,
-            "currentQuantity": 80,
-            "manufacturingDate": "1998-07-23",
-            "manufacturingTime": "2021-09-15T12:23:37.206794",
-            "dueDate": "2021-11-23",
-            "batchStockNumber": 1
-        },
-        {
-            "productSellerId": 1,
-            "currentTemperature": 20,
-            "minimumTemperature": 9,
-            "initialQuantity": 70,
-            "currentQuantity": 90,
-            "manufacturingDate": "1998-07-23",
-            "manufacturingTime": "2021-09-15T12:23:37.206794",
-            "dueDate": "2021-11-29",
-            "batchStockNumber": 2
+            "productId": "MLB-499",
+            "quantity": 1
         }
     ]
 }
@@ -87,153 +221,32 @@ Para atualizar o pedido de entrada no sistema é necessário efetuar uma requisi
 
 ***Link para uso:***
 
-http://localhost:8090/api/v1/fresh-products/inboundorder/update/1
+ http://localhost:8080/api/v1/product/hystory/insert
 
-### GET 2.1 - Product - list all
+### GET 1.3 - History buyer - Delete
 
 Para obter uma lista de todos os produtos cadastrados
 
 ***Link para uso:***
 
-http://localhost:8090/api/v1/product/list
+http://localhost:8080/api/v1/product/delete/1
+
 
 Exemplo de lista de produtos
 
 ```
-[
-    {
-        "volume": 80.0,
-        "maximumTemperature": 23.0,
-        "minimumTemperature": 9.5,
-        "product": {
-            "productId": "MLB-126",
-            "name": "Uva",
-            "description": "Caixa de Uva",
-            "type": {
-                "typeId": 1,
-                "initials": "RF",
-                "environmentType": "REFRIGERADOS"
-            }
-        }
+{
+    "date": "2021-10-31",
+    "buyerId": 1,
+    "orderStatus": {
+        "orderStatusId": 1,
+        "statusCode": "cart"
     },
-    {
-        "volume": 80.0,
-        "maximumTemperature": 23.0,
-        "minimumTemperature": 9.5,
-        "product": {
-            "productId": "MLB-127",
-            "name": "Maca",
-            "description": "Caixa de maca",
-            "type": {
-                "typeId": 1,
-                "initials": "RF",
-                "environmentType": "REFRIGERADOS"
-            }
+    "historyItemDto": [
+        {
+            "productId": "MLB-499",
+            "quantity": 1
         }
-    },
-    {
-        "volume": 80.0,
-        "maximumTemperature": 23.0,
-        "minimumTemperature": 9.5,
-        "product": {
-            "productId": "MLB-129",
-            "name": "Banana",
-            "description": "Caixa de Banana",
-            "type": {
-                "typeId": 1,
-                "initials": "RF",
-                "environmentType": "REFRIGERADOS"
-            }
-        }
-    },
-    {
-        "volume": 80.0,
-        "maximumTemperature": 23.0,
-        "minimumTemperature": 9.5,
-        "product": {
-            "productId": "MLB-129",
-            "name": "Banana",
-            "description": "Caixa de Banana",
-            "type": {
-                "typeId": 1,
-                "initials": "RF",
-                "environmentType": "REFRIGERADOS"
-            }
-        }
-    },
-    {
-        "volume": 80.0,
-        "maximumTemperature": 23.0,
-        "minimumTemperature": 9.5,
-        "product": {
-            "productId": "MLB-129",
-            "name": "Banana",
-            "description": "Caixa de Banana",
-            "type": {
-                "typeId": 1,
-                "initials": "RF",
-                "environmentType": "REFRIGERADOS"
-            }
-        }
-    },
-    {
-        "volume": 80.0,
-        "maximumTemperature": 23.0,
-        "minimumTemperature": 9.5,
-        "product": {
-            "productId": "MLB-129",
-            "name": "Banana",
-            "description": "Caixa de Banana",
-            "type": {
-                "typeId": 1,
-                "initials": "RF",
-                "environmentType": "REFRIGERADOS"
-            }
-        }
-    }
-]
-```
+    ]
+}
 
-
-### GET 2.2 - InboundOrder - List Initials
-
-Para obter uma lista ordenada pelo tipo do produto
-
-***Link para uso:***
-
-http://localhost:8090/api/v1/fresh-products/inboundorder/list/RF
-
-Exemplo de lista
-
-```
-[
-    {
-        "productId": "MLB-126",
-        "name": "Uva",
-        "description": "Caixa de Uva",
-        "type": {
-            "typeId": 1,
-            "initials": "RF",
-            "environmentType": "REFRIGERADOS"
-        }
-    },
-    {
-        "productId": "MLB-127",
-        "name": "Maca",
-        "description": "Caixa de maca",
-        "type": {
-            "typeId": 1,
-            "initials": "RF",
-            "environmentType": "REFRIGERADOS"
-        }
-    },
-    {
-        "productId": "MLB-129",
-        "name": "Banana",
-        "description": "Caixa de Banana",
-        "type": {
-            "typeId": 1,
-            "initials": "RF",
-            "environmentType": "REFRIGERADOS"
-        }
-    }
